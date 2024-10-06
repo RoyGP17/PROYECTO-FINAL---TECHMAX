@@ -4572,7 +4572,7 @@ body.offcanvas-open {
     - Breadvrumb  
 =================================*/
 .breadcrumb-area {
-  background-image: url(../images/about/FONDO-HP.jpg);
+  background-image: url(../images/about/TECHAMXFONDO.webp);
   background-color: #cad5e1;
   background-repeat: no-repeat;
   background-position: center center;
@@ -4608,9 +4608,19 @@ body.offcanvas-open {
   font-weight: 400;
   text-transform: capitalize;
   font-size: 60px;
-  color: #000;
+  color: #000; /* Color principal */
   margin: 0;
+  text-shadow: 
+    0 0 1px #00ffcc,  /* Primera capa de brillo sutil */
+    0 0 3px #00ffcc,  /* Segunda capa con leve expansión */
+    0 0 6px #00ff99,  /* Tercera capa de brillo moderado */
+    0 0 12px #00ff66; /* Última capa con un poco más de brillo */
 }
+
+
+
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .breadcrumb-area .breadcrumb-title {
     font-size: 42px;
@@ -4635,14 +4645,26 @@ body.offcanvas-open {
   }
 }
 .breadcrumb-list li a {
-  color: #000;
+  color: #fff; /* Color principal: negro */
+  text-shadow: 
+    0 0 5px #000, /* Primera capa de sombra ligera */
+    0 0 10px #000, /* Segunda capa más intensa */
+    0 0 20px #333, /* Sombra más difusa en gris oscuro */
+    0 0 40px #666; /* Última capa para un brillo suave */
 }
+
 .breadcrumb-list li a:hover {
   color: #266bf9;
 }
 .breadcrumb-list li.active {
-  color: #266bf9;
+  color: #fff; /* Color principal blanco */
+  text-shadow: 
+    0 0 5px #000,  /* Primera capa de sombra ligera negra */
+    0 0 10px #000, /* Segunda capa más intensa */
+    0 0 20px #333, /* Tercera capa en gris oscuro */
+    0 0 40px #666; /* Cuarta capa para brillo más difuso */
 }
+
 
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 5px;
