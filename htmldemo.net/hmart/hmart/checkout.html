@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmart - Checkout page</title>
+    <title>TM - Pagar</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Hmart-Smart Product eCommerce html Template">
     <!-- Favicon -->
@@ -458,11 +458,11 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-12 text-center">
-                        <h2 class="breadcrumb-title">Checkout</h2>
+                        <h2 class="breadcrumb-title">Pagar</h2>
                         <!-- breadcrumb-list start -->
                         <ul class="breadcrumb-list">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active">Checkout</li>
+                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item active">Pagar</li>
                         </ul>
                         <!-- breadcrumb-list end -->
                     </div>
@@ -476,171 +476,176 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="billing-info-wrap">
-                            <h3>Billing Details</h3>
+                            <h3>Detalles de facturación</h3>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-4">
-                                        <label>First Name</label>
+                                        <label>Nombre completo</label>
                                         <input type="text" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-4">
-                                        <label>Last Name</label>
+                                        <label>Apellidos</label>
                                         <input type="text" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-4">
-                                        <label>Company Name</label>
+                                        <label>Nombre de Empresa</label>
                                         <input type="text" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-select mb-4">
-                                        <label>Country</label>
-                                        <select>
-                                            <option>Select a country</option>
-                                            <option>Azerbaijan</option>
-                                            <option>Bahamas</option>
-                                            <option>Bahrain</option>
-                                            <option>Bangladesh</option>
-                                            <option>Barbados</option>
+                                        <label>Departamento</label>
+                                        <select id="departamento">
+                                            <option>Seleccionar Departamento</option>
+                                            <option>Amazonas</option>
+                                            <option>Áncash</option>
+                                            <option>Apurímac</option>
+                                            <option>Arequipa</option>
+                                            <option>Ayacucho</option>
+                                            <option>Cajamarca</option>
+                                            <option>Callao</option>
+                                            <option>Cusco</option>
+                                            <option>Huancavelica</option>
+                                            <option>Huánuco</option>
+                                            <option>Ica</option>
+                                            <option>Junín</option>
+                                            <option>La Libertad</option>
+                                            <option>Lambayeque</option>
+                                            <option>Lima</option>
+                                            <option>Loreto</option>
+                                            <option>Madre de Dios</option>
+                                            <option>Moquegua</option>
+                                            <option>Pasco</option>
+                                            <option>Piura</option>
+                                            <option>Puno</option>
+                                            <option>San Martín</option>
+                                            <option>Tacna</option>
+                                            <option>Tumbes</option>
+                                            <option>Ucayali</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
+                                    <div class="billing-select mb-4">
+                                        <label>Provincia</label>
+                                        <select id="provincia">
+                                            <option value="">Selecciona tu Provincia</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    // Define las provincias por departamento
+                                    const provinciasPorDepartamento = {
+                                    "Amazonas": ["Chachapoyas", "Bagua", "Bongará", "Condorcanqui", "Luya", "Rodríguez de Mendoza", "Utcubamba"],
+                                    "Áncash": ["Huaraz", "Aija", "Antonio Raymondi", "Asunción", "Bolognesi", "Carhuaz", "Carlos Fermín Fitzcarrald", "Casma", "Corongo", "Huari", "Huarmey", "Huaylas", "Mariscal Luzuriaga", "Ocros", "Pallasca", "Pomabamba", "Recuay", "Santa", "Sihuas", "Yungay"],
+                                    "Apurímac": ["Abancay", "Andahuaylas", "Antabamba", "Aymaraes", "Cotabambas", "Chincheros", "Grau"],
+                                    "Arequipa": ["Arequipa", "Camaná", "Caravelí", "Castilla", "Caylloma", "Condesuyos", "Islay", "La Unión"],
+                                    "Ayacucho": ["Huamanga", "Cangallo", "Huanca Sancos", "Huanta", "La Mar", "Lucanas", "Parinacochas", "Páucar del Sara Sara", "Sucre", "Víctor Fajardo", "Vilcas Huamán"],
+                                    "Cajamarca": ["Cajamarca", "Cajabamba", "Celendín", "Chota", "Contumazá", "Cutervo", "Hualgayoc", "Jaén", "San Ignacio", "San Marcos", "San Miguel", "San Pablo", "Santa Cruz"],
+                                    "Callao": ["Prov. Constitucional del Callao"],
+                                    "Cusco": ["Cusco", "Acomayo", "Anta", "Calca", "Canas", "Canchis", "Chumbivilcas", "Espinar", "La Convención", "Paruro", "Paucartambo", "Quispicanchi", "Urubamba"],
+                                    "Huancavelica": ["Huancavelica", "Acobamba", "Angaraes", "Castrovirreyna", "Churcampa", "Huaytará", "Tayacaja"],
+                                    "Huánuco": ["Huánuco", "Ambo", "Dos de Mayo", "Huacaybamba", "Huamalíes", "Leoncio Prado", "Marañón", "Pachitea", "Puerto Inca", "Lauricocha", "Yarowilca"],
+                                    "Ica": ["Ica", "Chincha", "Nazca", "Palpa", "Pisco"],
+                                    "Junín": ["Huancayo", "Concepción", "Chanchamayo", "Jauja", "Junín", "Satipo", "Tarma", "Yauli", "Chupaca"],
+                                    "La Libertad": ["Trujillo", "Ascope", "Bolívar", "Chepén", "Gran Chimú", "Julcán", "Otuzco", "Pacasmayo", "Pataz", "Sánchez Carrión", "Santiago de Chuco", "Virú"],
+                                    "Lambayeque": ["Chiclayo", "Ferreñafe", "Lambayeque"],
+                                    "Lima": ["Lima", "Barranca", "Cajatambo", "Canta", "Cañete", "Huaral", "Huarochirí", "Huaura", "Oyón", "Yauyos"],
+                                    "Loreto": ["Maynas", "Alto Amazonas", "Datem del Marañón", "Loreto", "Mariscal Ramón Castilla", "Putumayo", "Requena", "Ucayali"],
+                                    "Madre de Dios": ["Tambopata", "Manu", "Tahuamanu"],
+                                    "Moquegua": ["Mariscal Nieto", "General Sánchez Cerro", "Ilo"],
+                                    "Pasco": ["Pasco", "Daniel Alcides Carrión", "Oxapampa"],
+                                    "Piura": ["Piura", "Ayabaca", "Huancabamba", "Morropón", "Paita", "Sullana", "Talara", "Sechura"],
+                                    "Puno": ["Puno", "Azángaro", "Carabaya", "Chucuito", "El Collao", "Huancané", "Lampa", "Melgar", "Moho", "San Antonio de Putina", "San Román", "Sandia", "Yunguyo"],
+                                    "San Martín": ["Moyobamba", "Bellavista", "El Dorado", "Huallaga", "Lamas", "Mariscal Cáceres", "Picota", "Rioja", "San Martín", "Tocache"],
+                                    "Tacna": ["Tacna", "Candarave", "Jorge Basadre", "Tarata"],
+                                    "Tumbes": ["Tumbes", "Contralmirante Villar", "Zarumilla"],
+                                    "Ucayali": ["Coronel Portillo", "Atalaya", "Padre Abad", "Purús"]
+                                };
+
+                                    // Selecciona los elementos del DOM
+                                    const departamentoSelect = document.getElementById('departamento');
+                                    const provinciaSelect = document.getElementById('provincia');
+                            
+                                    // Evento que se ejecuta cuando el departamento cambia
+                                    departamentoSelect.addEventListener('change', function () {
+                                        const departamentoSeleccionado = departamentoSelect.value;
+                                        
+                                        // Limpia las opciones de provincia
+                                        provinciaSelect.innerHTML = '<option value="">Selecciona tu Provincia</option>';
+                            
+                                        // Si hay un departamento seleccionado, agrega las provincias correspondientes
+                                        if (departamentoSeleccionado && provinciasPorDepartamento[departamentoSeleccionado]) {
+                                            provinciasPorDepartamento[departamentoSeleccionado].forEach(provincia => {
+                                                const option = document.createElement('option');
+                                                option.value = provincia;
+                                                option.textContent = provincia;
+                                                provinciaSelect.appendChild(option);
+                                            });
+                                        }
+                                    });
+                                </script>
+                                
+                                <div class="col-lg-12">
                                     <div class="billing-info mb-4">
-                                        <label>Street Address</label>
-                                        <input class="billing-address" placeholder="House number and street name" type="text" />
-                                        <input placeholder="Apartment, suite, unit etc." type="text" />
+                                        <label>Direccion</label>
+                                        <input class="billing-address" placeholder="Número de casa y nombre de la calle" type="text" />
+                                        <input placeholder="Apartamento, suite, unidad, etc." type="text" />
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-4">
-                                        <label>Town / City</label>
+                                        <label>Pueblo / Ciudad</label>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>Código postal / ZIP</label>
                                         <input type="text" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-4">
-                                        <label>State / County</label>
+                                        <label>Celular</label>
                                         <input type="text" />
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-4">
-                                        <label>Postcode / ZIP</label>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-4">
-                                        <label>Phone</label>
-                                        <input type="text" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-4">
-                                        <label>Email Address</label>
+                                        <label>Correo Electronico</label>
                                         <input type="text" />
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout-account mb-30px">
                                 <input class="checkout-toggle2 w-auto h-auto" type="checkbox" />
-                                <label>Create an account?</label>
+                                <label>¿Crear una cuenta?</label>
                             </div>
                             <div class="checkout-account-toggle open-toggle2 mb-30">
-                                <input placeholder="Email address" type="email" />
-                                <input placeholder="Password" type="password" />
-                                <button class="btn-hover checkout-btn" type="submit">register</button>
+                                <input placeholder="Correo Electronico" type="email" />
+                                <input placeholder="Contraseña" type="password" />
+                                <button class="btn-hover checkout-btn" type="submit">Registrarse</button>
                             </div>
                             <div class="additional-info-wrap">
-                                <h4>Additional information</h4>
+                                <h4>Informacion adicional</h4>
                                 <div class="additional-info">
-                                    <label>Order notes</label>
-                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message"></textarea>
+                                    <label>Notas de pedido</label>
+                                    <textarea placeholder="Notas sobre su pedido, por ejemplo, notas especiales para la entrega." name="message"></textarea>
                                 </div>
                             </div>
-                            <div class="checkout-account mt-25">
-                                <input class="checkout-toggle w-auto h-auto" type="checkbox" />
-                                <label>Ship to a different address?</label>
-                            </div>
-                            <div class="different-address open-toggle mt-30px">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-4">
-                                            <label>First Name</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-4">
-                                            <label>Last Name</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-info mb-4">
-                                            <label>Company Name</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-select mb-4">
-                                            <label>Country</label>
-                                            <select>
-                                                <option>Select a country</option>
-                                                <option>Azerbaijan</option>
-                                                <option>Bahamas</option>
-                                                <option>Bahrain</option>
-                                                <option>Bangladesh</option>
-                                                <option>Barbados</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-info mb-4">
-                                            <label>Street Address</label>
-                                            <input class="billing-address" placeholder="House number and street name" type="text" />
-                                            <input placeholder="Apartment, suite, unit etc." type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="billing-info mb-4">
-                                            <label>Town / City</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-4">
-                                            <label>State / County</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-4">
-                                            <label>Postcode / ZIP</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-4">
-                                            <label>Phone</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="billing-info mb-4">
-                                            <label>Email Address</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
                         </div>
+                        
                     </div>
+                    
                     <div class="col-lg-5 mt-md-30px mt-lm-30px ">
                         <div class="your-order-area">
                             <h3>Your order</h3>
@@ -878,3 +883,4 @@
 
 <!-- Mirrored from htmldemo.net/hmart/hmart/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2024 14:11:31 GMT -->
 </html>
+
