@@ -549,6 +549,23 @@ header .header-top .welcome-text {
       -ms-flex-align: start;
           align-items: flex-start;
 }
+
+
+.header-logo img {
+  width: 80px; /* Disminuye el tamaño de la imagen */
+  height: auto;
+}
+
+.header-logo p {
+  font-size: 3em; /* Aumenta el tamaño de la letra */
+  color: #008080; /* Cambia el color de la letra a un tono similar al del logo */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre la imagen y el texto */
+  font-weight: 700
+}
+
+
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
   header .header-top .welcome-text {
     -webkit-box-pack: center;
