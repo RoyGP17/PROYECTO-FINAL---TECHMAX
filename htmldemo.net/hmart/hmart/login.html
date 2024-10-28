@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
+    <div class="main-wrapper" id="appLogin">
         <header>
             <!-- Header top area start -->
             <div class="header-top">
@@ -45,7 +45,8 @@
                             <div class="top-nav">
                                 <ul>
                                     <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +51 981 551 708</a></li>
-                                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> techmax.e.i.r.l.@gmail.com></li>
+                                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i>
+                                            techmax.e.i.r.l.@gmail.com></li>
                                     <li><a href="my-account.html"><i class="fa fa-user"></i>Usuario</a></li>
                                 </ul>
                             </div>
@@ -54,7 +55,7 @@
                 </div>
             </div>
             <!-- Fin del área superior del encabezado  -->
-            
+
             <!-- Inicio del área de acción del encabezado -->
             <div class="header-bottom  d-none d-lg-block">
                 <div class="container">
@@ -120,12 +121,14 @@
                                     <i class="pe-7s-like"></i>
                                 </a>
                                 <!-- Single Wedge End -->
-                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                <a href="#offcanvas-cart"
+                                    class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
                                     <span class="header-action-num">01</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
                                 </a>
-                                <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                                <a href="#offcanvas-mobile-menu"
+                                    class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                                     <i class="pe-7s-menu"></i>
                                 </a>
                             </div>
@@ -143,7 +146,8 @@
                                 <li class="dropdown"><a href="index-2.html">Inicio</a>
                                 </li>
                                 <li><a href="about.html">Nosotros</a></li>
-                                <li class="dropdown position-static"><a href="about.html">Páginas<i class="fa fa-angle-down"></i></a>
+                                <li class="dropdown position-static"><a href="about.html">Páginas<i
+                                            class="fa fa-angle-down"></i></a>
                                     <ul class="mega-menu d-block">
                                         <li class="d-flex">
                                             <ul class="d-block">
@@ -163,16 +167,19 @@
                                                 <li><a href="login.html">Inicio de Sesión & Registro</a></li>
                                                 <li><a href="thank-you-page.html">Agradecimiento</a></li>
                                             </ul>
-                                            <ul class="d-flex align-items-center p-0 border-0 flex-column justify-content-center">
+                                            <ul
+                                                class="d-flex align-items-center p-0 border-0 flex-column justify-content-center">
                                                 <li>
-                                                    <a class="p-0" href="shop-left-sidebar.html"><img class="img-responsive w-100" src="assets/images/banner/menu-banner.png" alt=""></a>
+                                                    <a class="p-0" href="shop-left-sidebar.html"><img
+                                                            class="img-responsive w-100"
+                                                            src="assets/images/banner/menu-banner.png" alt=""></a>
                                                 </li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown position-static"><a href="#">Tienda<i
-                                    class="fa fa-angle-down"></i></a>
+                                            class="fa fa-angle-down"></i></a>
                                     <ul class="mega-menu d-block">
                                         <li class="d-flex">
                                             <ul class="d-block">
@@ -201,7 +208,8 @@
                                                 <li><a href="single-product-slider.html">Silla Xion Raven</a></li>
                                                 <li><a href="single-product-gallery-left.html">silla Marvo</a>
                                                 <li><a href="single-product-gallery-right.html">Silla Vitesse</a> </li>
-                                                <li><a href="single-product-sticky-left.html">Silla Cibertel Striker CX1003</a>
+                                                <li><a href="single-product-sticky-left.html">Silla Cibertel Striker
+                                                        CX1003</a>
                                                 </li>
                                                 <li><a href="single-product-sticky-right.html">Silla Enkore Patriot</a>
                                                 </li>
@@ -494,18 +502,21 @@
                                 <div id="lg1" class="tab-pane active">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Usuario" />
-                                                <input type="password" name="user-password" placeholder="Contraseña" />
+                                            <div>
+                                                <input type="text" name="user-name" v-model="login.user"
+                                                    placeholder="Usuario" />
+                                                <input type="password" name="user-password" v-model="login.password"
+                                                    placeholder="Contraseña" />
                                                 <div class="button-box">
                                                     <div class="login-toggle-btn">
                                                         <input type="checkbox" />
                                                         <a class="flote-none" href="javascript:void(0)">Recuérdame</a>
                                                         <a href="#">¿Has olvidado tu contraseña?</a>
                                                     </div>
-                                                    <button type="submit"><span>Iniciar Sesión</span></button>
+                                                    <button type="button" @click="iniciarSesion"><span>Iniciar
+                                                            Sesión</span></button>
                                                 </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -544,7 +555,8 @@
                                     </div>
                                     <p class="about-text">Techmax ofrece soluciones tecnológicas innovadoras y de
                                         calidad,
-                                        ayudando a nuestros clientes a mejorar su productividad con tecnología avanzada
+                                        ayudando a nuestros clientes a mejorar su productividad con tecnología
+                                        avanzada
                                         y accesible.
                                     </p>
                                     <ul class="link-follow">
@@ -680,6 +692,9 @@
 
     <!--Main JS (Common Activation Codes)-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/plugins/vue.js"></script>
+    <script src="assets/js/plugins/axios.min.js"></script>
+    <script src="assets/js/appLogin.js"></script>
 </body>
 
 

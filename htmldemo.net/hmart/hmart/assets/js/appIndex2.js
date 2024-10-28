@@ -1,6 +1,6 @@
-let app = new Vue({
-    el: '#app',
-    name: 'app',
+let appIndex2 = new Vue({
+    el: '#appIndex2',
+    name: 'appIndex2',
     data: {
         products: []
     },
