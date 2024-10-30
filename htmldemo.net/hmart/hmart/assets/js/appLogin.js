@@ -3,8 +3,8 @@ let appLogin = new Vue({
     name: 'appLogin',
     data: {
         login: {
-            user: 'wgomezpr',
-            password: '123@2024'
+            user: '',//wgomezpr
+            password: ''//123@2024
         }
     },
     created() { },

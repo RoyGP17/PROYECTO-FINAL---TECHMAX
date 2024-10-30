@@ -1,12 +1,12 @@
 let appIndex2 = new Vue({
-    el: '#appIndex2',
-    name: 'appIndex2',
+    el: '#appShop4Column',
+    name: 'appShop4Column',
     data: {
         products: [],
         filter: {
             Producto: "",
             Marca: "",
-            Categoria: ""
+            Categoria: "Mouse"
         }
     },
     created() {
