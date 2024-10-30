@@ -6,7 +6,7 @@ let appIndex2 = new Vue({
         filter: {
             Producto: "",
             Marca: "",
-            Categoria: ""
+            Categoria: "-"
         }
     },
     created() {
