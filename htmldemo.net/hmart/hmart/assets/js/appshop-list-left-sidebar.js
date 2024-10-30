@@ -1,6 +1,6 @@
 let appIndex2 = new Vue({
-    el: '#shop-list-left-sidebar',
-    name: 'shop-list-left-sidebar',
+    el: '#appshop-list-left-sidebar',
+    name: 'appshop-list-left-sidebar',
     data: {
         products: [],
         filter: {
