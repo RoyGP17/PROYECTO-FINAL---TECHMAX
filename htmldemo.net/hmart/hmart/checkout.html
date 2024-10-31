@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
+    <div class="main-wrapper" id="appCart">
         <header>
             <!-- Header top area start -->
             <div class="header-top">
@@ -655,12 +655,10 @@
                                             <li>Total</li>
                                         </ul>
                                     </div>
-                                    <div class="your-order-middle">
+                                    <div class="your-order-middle" v-for="product in products">
                                         <ul>
-                                            <li><span class="order-middle-left">Product Name X 1</span> <span
-                                                class="order-price">$100 </span></li>
-                                            <li><span class="order-middle-left">Product Name X 1</span> <span
-                                                class="order-price">$100 </span></li>
+                                            <li><span class="order-middle-left">{{product.Nombre}} X {{product.Cantidad}}</span> <span
+                                                class="order-price">S/.{{product.PrecioUnitario}}</span></li>
                                         </ul>
                                     </div>
                                     <div class="your-order-bottom">
@@ -672,7 +670,7 @@
                                     <div class="your-order-total">
                                         <ul>
                                             <li class="order-total">Total</li>
-                                            <li>S/ 100</li>
+                                            <li>{{totalPrice}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -834,6 +832,9 @@
 
     <!--Main JS (Common Activation Codes)-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/plugins/vue.js"></script>
+    <script src="assets/js/plugins/axios.min.js"></script>
+    <script src="assets/js/appCart.js"></script>
 </body>
 
 

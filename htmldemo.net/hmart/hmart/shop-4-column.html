@@ -600,8 +600,8 @@
                                                             </span>
                                                         </div>
                                                         <div class="actions">
-                                                            <button title="Add To Cart" class="action add-to-cart"
-                                                                data-bs-toggle="modal"
+                                                            <button title="Add To Cart" @click="addToCart(product);"
+                                                                class="action add-to-cart" data-bs-toggle="modal"
                                                                 data-bs-target="#exampleModal-Cart"><i
                                                                     class="pe-7s-shopbag"></i></button>
                                                             <button class="action wishlist" title="Wishlist"
@@ -958,14 +958,13 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
                                         class="pe-7s-close"></i></button>
                                 <div class="tt-modal-messages">
-                                    <i class="pe-7s-check"></i> Added to cart successfully!
+                                    <i class="pe-7s-check"></i> Añadida al carrito con éxito!
                                 </div>
                                 <div class="tt-modal-product">
                                     <div class="tt-img">
-                                        <img src="assets/images/product-image/Producto-Mouse/Mouse1.jpg"
-                                            alt="Modern Smart Phone">
+                                        <img :src="productSelected.Imagen" :alt="productSelected.Nombre">
                                     </div>
-                                    <h2 class="tt-title"><a href="#">Modern Smart Phone</a></h2>
+                                    <h2 class="tt-title"><a href="#">{{productSelected.Nombre}}</a></h2>
                                 </div>
                             </div>
                         </div>
