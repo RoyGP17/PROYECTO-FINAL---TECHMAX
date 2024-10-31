@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from htmldemo.net/hmart/hmart/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2024 14:11:37 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +30,7 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
+    <div class="main-wrapper" id="appContact">
         <header>
             <!-- Header top area start -->
             <div class="header-top">
@@ -44,7 +45,8 @@
                             <div class="top-nav">
                                 <ul>
                                     <li><a href="tel:0123456789"><i class="fa fa-phone"></i> +012 3456 789</a></li>
-                                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i> demo@example.com</a></li>
+                                    <li><a href="mailto:demo@example.com"><i class="fa fa-envelope-o"></i>
+                                            demo@example.com</a></li>
                                     <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
                                 </ul>
                             </div>
@@ -78,10 +80,10 @@
                                     <i class="pe-7s-like"></i>
                                 </a>
                                 <!-- Single Wedge End -->
-                                <a href="#offcanvas-cart"
+                                <a @click="showCart()"
                                     class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
+                                    <span class="header-action-num">{{products.length}}</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
                                 </a>
                                 <a href="#offcanvas-mobile-menu"
@@ -118,12 +120,14 @@
                                     <i class="pe-7s-like"></i>
                                 </a>
                                 <!-- Single Wedge End -->
-                                <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                                <a @click="showCart()"
+                                    class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
                                     <i class="pe-7s-shopbag"></i>
-                                    <span class="header-action-num">01</span>
+                                    <span class="header-action-num">{{products.length}}</span>
                                     <!-- <span class="cart-amount">€30.00</span> -->
                                 </a>
-                                <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                                <a href="#offcanvas-mobile-menu"
+                                    class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
                                     <i class="pe-7s-menu"></i>
                                 </a>
                             </div>
@@ -220,7 +224,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
+
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
@@ -254,7 +258,8 @@
                 <div class="body customScroll">
                     <ul class="minicart-product-list">
                         <li>
-                            <a href="single-product.html" class="image"><img src="assets/images/product-image/1.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img src="assets/images/product-image/1.webp"
+                                    alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Modern Smart Phone</a>
                                 <span class="quantity-price">1 x <span class="amount">$21.86</span></span>
@@ -262,7 +267,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="single-product.html" class="image"><img src="assets/images/product-image/2.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img src="assets/images/product-image/2.webp"
+                                    alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Bluetooth Headphone</a>
                                 <span class="quantity-price">1 x <span class="amount">$13.28</span></span>
@@ -270,7 +276,8 @@
                             </div>
                         </li>
                         <li>
-                            <a href="single-product.html" class="image"><img src="assets/images/product-image/3.webp" alt="Cart product Image"></a>
+                            <a href="single-product.html" class="image"><img src="assets/images/product-image/3.webp"
+                                    alt="Cart product Image"></a>
                             <div class="content">
                                 <a href="single-product.html" class="title">Smart Music Box</a>
                                 <span class="quantity-price">1 x <span class="amount">$17.34</span></span>
@@ -292,31 +299,17 @@
             <div class="inner">
                 <div class="head">
                     <span class="title">Cart</span>
-                    <button class="offcanvas-close">×</button>
+                    <button @click="closeCart()" class="offcanvas-close">×</button>
                 </div>
                 <div class="body customScroll">
                     <ul class="minicart-product-list">
-                        <li>
-                            <a href="single-product.html" class="image"><img src="assets/images/product-image/1.webp" alt="Cart product Image"></a>
+                        <li v-for="product in products">
+                            <a href="single-product.html" class="image"><img :src="product.Imagen"
+                                    alt="Cart product Image"></a>
                             <div class="content">
-                                <a href="single-product.html" class="title">Modern Smart Phone</a>
-                                <span class="quantity-price">1 x <span class="amount">$18.86</span></span>
-                                <a href="#" class="remove">×</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="single-product.html" class="image"><img src="assets/images/product-image/2.webp" alt="Cart product Image"></a>
-                            <div class="content">
-                                <a href="single-product.html" class="title">Bluetooth Headphone</a>
-                                <span class="quantity-price">1 x <span class="amount">$43.28</span></span>
-                                <a href="#" class="remove">×</a>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="single-product.html" class="image"><img src="assets/images/product-image/3.webp" alt="Cart product Image"></a>
-                            <div class="content">
-                                <a href="single-product.html" class="title">Smart Music Box</a>
-                                <span class="quantity-price">1 x <span class="amount">$37.34</span></span>
+                                <a href="single-product.html" class="title">{{product.Nombre}}</a>
+                                <span class="quantity-price">{{product.Cantidad}} x <span class="amount">S/.
+                                        {{product.Total}}</span></span>
                                 <a href="#" class="remove">×</a>
                             </div>
                         </li>
@@ -497,7 +490,8 @@
                                 <div class="contact-title mb-30">
                                     <h2 class="title">Send A Quest</h2>
                                 </div>
-                                <form class="contact-form-style" id="contact-form" action="https://whizthemes.com/nazmul/php/mail.php" method="post">
+                                <form class="contact-form-style" id="contact-form"
+                                    action="https://whizthemes.com/nazmul/php/mail.php" method="post">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <input name="name" placeholder="Name*" type="text" />
@@ -526,7 +520,7 @@
                                     <div class="info-box">
                                         <h5 class="title">Address</h5>
                                         <p>Your address goes here. <br>
-                                        123 Your Location</p>
+                                            123 Your Location</p>
                                     </div>
                                 </div>
                                 <div class="single-contact">
@@ -561,7 +555,10 @@
             <div id="mapid">
                 <div class="mapouter">
                     <div class="gmap_canvas">
-                        <iframe id="gmap_canvas"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7770.036694026592!2d-74.22834712416503!3d-13.161242663653086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df365231db7%3A0xd6dde3ed9a6f3cb8!2sUNIVERSIDAD%20NACIONAL%20DE%20SAN%20CRIST%C3%93BAL%20DE%20HUAMANGA!5e0!3m2!1ses!2sus!4v1730046005803!5m2!1ses!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe id="gmap_canvas"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7770.036694026592!2d-74.22834712416503!3d-13.161242663653086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df365231db7%3A0xd6dde3ed9a6f3cb8!2sUNIVERSIDAD%20NACIONAL%20DE%20SAN%20CRIST%C3%93BAL%20DE%20HUAMANGA!5e0!3m2!1ses!2sus!4v1730046005803!5m2!1ses!2sus"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                         <a href="https://sites.google.com/view/maps-api-v2/mapv2"></a>
                     </div>
                 </div>
@@ -718,8 +715,12 @@
 
     <!--Main JS (Common Activation Codes)-->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/plugins/vue.js"></script>
+    <script src="assets/js/plugins/axios.min.js"></script>
+    <script src="assets/js/appContact.js"></script>
 </body>
 
 
 <!-- Mirrored from htmldemo.net/hmart/hmart/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2024 14:11:37 GMT -->
+
 </html>
