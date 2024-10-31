@@ -1,12 +1,12 @@
 let appIndex2 = new Vue({
-    el: '#single-product-gallery-left',
-    name: 'single-product-gallery-left',
+    el: '#appsingle-product-gallery-left',
+    name: 'appsingle-product-gallery-left',
     data: {
         products: [],
         filter: {
             Producto: "",
             Marca: "",
-            Categoria: "Silla Marvo"
+            Categoria: "Silla"
         }
     },
     created() {

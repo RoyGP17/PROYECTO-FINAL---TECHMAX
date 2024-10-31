@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    <div class="main-wrapper">
+    <div class="main-wrapper" id="appsingle-product-gallery-left">
         <header>
             <!-- Header top area start -->
             <div class="header-top">
@@ -482,7 +482,7 @@
         </div>
         <!-- breadcrumb-area end -->
         <!-- Product Details Area Start -->
-        <div class="product-details-area pt-100px pb-100px" id="single-product-gallery-left">
+        <div class="product-details-area pt-100px pb-100px">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-xs-12 mb-lm-30px mb-md-30px mb-sm-30px">
@@ -726,29 +726,43 @@
                     <div class="col">
                         <div class="new-product-slider swiper-container slider-nav-style-1">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" v-for="product in products">
                                     <!-- Single Prodect -->
-                                    <div class="product">
+                                    <div class="product"
+                                    >
                                         <span class="badges">
-                                        <span class="new">Nuevo!</span>
+                                            <span class="new">New</span>
                                         </span>
                                         <div class="thumb">
-                                            <a href="single-product-gallery-left.html" class="image">
-                                                <img src="assets/images/product-image/Producto-Sillas/silla-marvo-1.webp" alt="Product" />
-                                                <img class="hover-image" src="assets/images/product-image/Producto-Sillas/silla-marvo-1.webp" alt="Product" />
+                                            <a href="shop-5-column.html" class="image">
+                                                <img :src="product.Imagen" alt="Product" />
+                                                <img class="hover-image" :src="product.Imagen" alt="Product" />
                                             </a>
                                         </div>
                                         <div class="content">
-                                            <span class="category"><a href="#">Sillas Gamer</a></span>
-                                            <h5 class="title"><a href="single-product-gallery-left.html">Silla Marvo Azul
-
+                                            <span class="category"><a href="#">{{product.NombreCategoria}}</a></span>
+                                            <h5 class="title"><a href="shop-5-column.html">{{product.Nombre}} -
+                                                    {{product.NombreMarca}}
                                                 </a>
                                             </h5>
                                             <span class="price">
-                                            <span class="new">S/500</span>
+                                                <span class="new">S/ {{product.PrecioUnitario}}</span>
                                             </span>
                                         </div>
-                                        
+                                        <div class="actions">
+                                            <button title="Add To Cart" class="action add-to-cart"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                                                    class="pe-7s-shopbag"></i></button>
+                                            <button class="action wishlist" title="Wishlist" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal-Wishlist"><i
+                                                    class="pe-7s-like"></i></button>
+                                            <button class="action quickview" data-link-action="quickview"
+                                                title="Quick view" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
+                                            <button class="action compare" title="Compare" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal-Compare"><i
+                                                    class="pe-7s-refresh-2"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">

@@ -1,12 +1,12 @@
 let appIndex2 = new Vue({
-    el: '#single-product-slider',
-    name: 'single-product-slider',
+    el: '#appsingle-product-slider',
+    name: 'appsingle-product-slider',
     data: {
         products: [],
         filter: {
             Producto: "",
             Marca: "",
-            Categoria: "Silla Xion Raven"
+            Categoria: "Silla"
         }
     },
     created() {
